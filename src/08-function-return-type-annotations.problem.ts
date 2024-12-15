@@ -1,4 +1,5 @@
 import { expect, it } from "vitest";
+import { defaultUser } from "./07-arrays.problem";
 
 interface User {
   id: number;
@@ -17,8 +18,9 @@ interface Post {
  * How do we ensure that makeUser ALWAYS
  * returns a user?
  */
-const makeUser = () => {
-  return {};
+const makeUser = ():User => {
+  console.log(defaultUser)
+  return defaultUser;
 };
 
 it("Should return a valid user", () => {
