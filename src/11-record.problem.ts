@@ -1,7 +1,25 @@
 import { expect, it } from "vitest";
 
+// interface Cache {
+//   [index: string]: string;
+// }
+
+type Cache = {
+  [index: string]: string;
+}
+
 const createCache = () => {
-  const cache = {};
+  //1 const cache: {
+  //    [index: string]: string
+  //   } = {};
+
+  //2 with a custom type or an interface:
+
+  // const cache: Cache = {};
+
+  //3 with a record utility type:
+
+  const cache: Record<string, string> = {};
 
   const add = (id: string, value: string) => {
     cache[id] = value;
