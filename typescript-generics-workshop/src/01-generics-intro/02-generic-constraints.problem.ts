@@ -1,7 +1,19 @@
+
+
+
+
+
+
+
 import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-export const returnWhatIPassIn = <T>(t: T) => t;
+
+type IsString = string;
+
+export const returnWhatIPassIn = <T extends IsString>(t: T) => t;
+
+//or just <T extends string>
 
 it("Should ONLY allow strings to be passed in", () => {
   const a = returnWhatIPassIn("a");
